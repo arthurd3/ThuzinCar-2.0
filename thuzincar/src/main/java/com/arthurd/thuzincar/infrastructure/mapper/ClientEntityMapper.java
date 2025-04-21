@@ -1,15 +1,14 @@
 package com.arthurd.thuzincar.infrastructure.mapper;
 
 import com.arthurd.thuzincar.core.model.Client;
-import com.arthurd.thuzincar.infrastructure.controller.CreateClientRequest;
-import com.arthurd.thuzincar.infrastructure.controller.CreateClientResponse;
+import com.arthurd.thuzincar.infrastructure.entity.ClientEntity;
 
 public class ClientEntityMapper {
-    public Client toUser(CreateClientRequest clientRequest) {
-        return new Client(clientRequest.name(), clientRequest.email(), clientRequest.phone(), clientRequest.userType());
+    public ClientEntity toEntity(Client clientDomainObj) {
+        return new ClientEntity(null , clientDomainObj.name() , clientDomainObj.email(), clientDomainObj.phone() , clientDomainObj.userType());
     }
 
-    public CreateClientResponse toResponse(Client client) {
-        return new CreateClientResponse(client.name() ,client.email() , client.phone(), client.userType());
+    public Client toDomain(ClientEntity clientEntity) {
+        return new Client( clientEntity.getName() , clientEntity.getEmail() , clientEntity.getPhone());
     }
 }
