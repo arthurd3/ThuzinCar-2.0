@@ -21,7 +21,7 @@ public class CarEntity {
     private String model;
     @Column(name = "car_year")
     private String year;
-    @Column(name = "car_plate")
+    @Column(name = "car_plate" , unique = true)
     private String plate;
     @Column(name = "car_color")
     private String color;

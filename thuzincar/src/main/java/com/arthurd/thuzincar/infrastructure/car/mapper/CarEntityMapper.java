@@ -7,14 +7,14 @@ import java.util.List;
 
 public class CarEntityMapper {
     public static CarEntity toEntity(Car car) {
-        CarEntity entity = new CarEntity();
-        entity.setModel(car.model());
-        entity.setYear(car.year());
-        entity.setPlate(car.plate());
-        entity.setColor(car.color());
-        entity.setClient(null);
-        entity.setCar_id(null);
-        return entity;
+        return new CarEntity(
+                null,
+                car.model(),
+                car.year(),
+                car.plate(),
+                car.color(),
+                null
+        );
     }
 
     public static Car toModel(CarEntity entity) {
