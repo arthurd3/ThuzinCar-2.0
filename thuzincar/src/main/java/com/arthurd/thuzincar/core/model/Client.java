@@ -1,4 +1,6 @@
 package com.arthurd.thuzincar.core.model;
 
-public class Client {
+import com.arthurd.thuzincar.core.enums.UserType;
+
+public record Client (String name, String email, String phone, UserType userType) {
 }
